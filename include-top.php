@@ -122,7 +122,7 @@ if(ICL_LANGUAGE_CODE=='en'){
                                  <ul class="nav navbar-nav">
                                      <li class="active"><a 			href="<?php bloginfo('url'); ?>">Home</a></li>
                                      <li><a id="btn_tiendas" 		href="<?php bloginfo('url'); ?>/tiendas#tiendas"><?php echo $menu7; ?></a></li>
-                                     <li><a id="btn_boulevard" 		href="<?php bloginfo('url'); ?>/food-court#food-court"><?php echo $menu3; ?></a></li>
+                                     <li><a id="btn_boulevard" 		href="<?php bloginfo('url'); ?>/food-court-tiendas#tiendas"><?php echo $menu3; ?></a></li>
                                      <li><a id="btn_piso" 			href="<?php bloginfo('url'); ?>/bazar-central"><?php echo $menu4; ?></a></li>
                                      <li><a id="btn_entretencion" 	href="<?php bloginfo('url'); ?>/novedades#entretencion"><?php echo $menu5; ?></a></li>
                                      <li><a id="btn_novedades" 		href="<?php bloginfo('url'); ?>/novedades#novedades"><?php echo $menu6; ?></a></li>

@@ -14,7 +14,7 @@ Template name: Boulevard Tiendas
           <div class="row">
               <section class="tiendas">
               <div id="tiendas" class="anchor_seccion"></div>
-                  <h4 class="divider">boulevard</h4>
+                  <h4 class="divider">Food Court</h4>
                    <a href="food-court.php" class="back">< <?php echo $back; ?></a>
                       <div class="grid_tiendas center-block">
                           <div class="container">
@@ -69,7 +69,7 @@ Template name: Boulevard Tiendas
                                               <h4 class="nombre_tienda"><?php echo $t['nombre']; ?></h4>
                                                <div class="borde"> </div>
                                               <span class="bg_nombre_tienda"> </span>
-					                        	<span id="adidas" class="overlay_img<?php echo $clase; ?>" data-id="<?php echo $t['punto_interes']; ?>" data-logo="<?php echo $logo; ?>" data-desc='<?php echo trim($t['descripcion']); ?>' data-img="<?php echo $imagen; ?>" data-fono="<?php echo $t['telefono_punto_interes']; ?>" data-piso="<?php echo $t['numero_piso']; ?>" data-url="<?php echo $t['url_punto_interes']; ?>" data-mapa="<?php bloginfo('template_url'); ?>/ws/uploads/plano_<?php echo $t['punto_interes']; ?>.jpg" data-nombre="<?php echo $t['nombre']; ?>" ></span>
+					                        	<span id="adidas" class="overlay_img<?php echo $clase; ?>" data-clander="<?php echo $imagen1; ?>" data-id="<?php echo $t['punto_interes']; ?>" data-logo="<?php echo $logo; ?>" data-desc='<?php echo trim($t['descripcion']); ?>' data-img="<?php echo $imagen; ?>" data-fono="<?php echo $t['telefono_punto_interes']; ?>" data-piso="<?php echo $t['numero_piso']; ?>" data-url="<?php echo $t['url_punto_interes']; ?>" data-mapa="<?php bloginfo('template_url'); ?>/ws/uploads/plano_<?php echo $t['punto_interes']; ?>.jpg" data-nombre="<?php echo $t['nombre']; ?>" ></span>
 					                            <img class="img-responsive" src="<?php echo $imagen; ?>">
 					                        </a>
 				                            <div class="box_logo_tienda">

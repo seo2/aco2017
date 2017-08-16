@@ -14,48 +14,90 @@ if(ICL_LANGUAGE_CODE=='en'){
 	$tit2 = "descuentos";
 	$tit3 = "servicios";
 } ?>
-<div class="box">
         <!-- arauco tag -->
-        <a href="<?php bloginfo('url'); ?>/arauco-tag" class="box_enlace">
-          <div class="box_img" style="background: url(<?php bloginfo('template_url'); ?>/assets/img/bg_arauco_tag.png);"> </div>
-          <div class="caption">
-              <h3><?php echo $tit1; ?></h3>
-              <div class="divider"> &nbsp </div>
-          </div>
-        </a>
- </div> <!-- arauco tag -->
+<?php	                                         
+    $args = array(
+		'post_type' => array('home')
+    );
+	$the_query = new WP_Query ($args);
+    $i = 0;
+    if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
+    	$i++;
+?>	
+                  <div class="box">
+                        <div class="box_slider owl-carousel owl-theme ">
+					   	<?php
+						   	$e = 0;
+							$sliders = get_order_group('distrito_de_lujo_imagen_slider');
+							foreach($sliders as $slider){  
+								$e++; 
+						?>    	                        
+                          <div class="item">
+                              <a href="<?php bloginfo('url'); ?>/tiendas#tiendas">
+	                            <?php if($e==1){ ?>
+                                   <div class="caption tiendas">
+                                      <p>NUESTRAS </p>
+                                       <h3>TIENDAS </h3>
+                                       <div class="divider"> </div>
+                                   </div>
+                                <?php } ?>
+                                <div class="box_slide" style="background: url(<?php echo get('distrito_de_lujo_imagen_slider',$slider); ?>);"> </div>
+                              </a>
+                          </div>
+                        <?php } ?>
+                          
+                      </div><!-- box slider  -->
+                  </div> <!-- slider distrito -->
 
-  <div class="box">
-     <div class="box_slider owl-carousel owl-theme ">
-           <div class="item">
-               <a href="<?php bloginfo('url'); ?>/servicio-al-cliente/servicios/">
-                    <div class="caption">
-                         <p>&nbsp </p>
-                        <h3><?php echo $tit3; ?> </h3>
+                  <div class="box">
+                        <div class="box_slider owl-carousel owl-theme ">
+					   	<?php
+						   	$e = 0;
+							$sliders = get_order_group('boulevard_imagen_slider');
+							foreach($sliders as $slider){  
+								$e++; 
+						?>  
+                              <div class="item">
+                                  <a href="<?php bloginfo('url'); ?>/novedades/#entretencion">     
+	                            <?php if($e==1){ ?>
+                                       <div class="caption entretencion">
+                                          <p>ZONA </p>
+                                           <h3>ENTRETENCIÓN </h3>
+                                           <div class="divider"> </div>
+                                       </div>
+                                <?php } ?>
+                                <div class="box_slide" style="background: url(<?php echo get('boulevard_imagen_slider',$slider); ?>);"> </div>                       
+                                  </a>
+                               </div> <!-- item -->
+                        <?php } ?>
+                        </div><!-- box slider  -->
+                 </div>
 
-                        <div class="divider"> </div>
-                    </div>
-                    <div class="box_slide" style="background: url(<?php bloginfo('template_url'); ?>/assets/img/portada_servicios.jpg);"> </div>                             
-               </a>
-            </div> <!-- item -->
-             <!-- <div class="item">
-               <a href="">
-                    <div class="box_slide" style="background: url(<?php bloginfo('template_url'); ?>/assets/img/portada_zona.jpg);"> </div>                             
-               </a>
-            </div>  item -->
-       </div><!-- box slider  -->
- </div><!-- servicios  -->
-
- <div class="box">
-       <div class="box_slider owl-carousel owl-theme">
-            <div class="item">
-                <a href="<?php bloginfo('url'); ?>/travellers">
-                      <div class="logo_seccion logo_travellers" style="background: url(<?php bloginfo('template_url'); ?>/assets/img/logo_travellers_blanco.svg);"> </div>                             
-                     <div class="box_slide" style="background: url(<?php bloginfo('template_url'); ?>/assets/img/portada_travellers.png);"> </div>                             
-                </a>
-             </div>
-        </div><!-- box slider  -->
- </div><!-- travellers -->
+                  <div class="box">
+                      <div class="box_slider owl-carousel owl-theme ">
+					   	<?php
+						   	$e = 0;
+							$sliders = get_order_group('piso_de_diseno_imagen_slider');
+							foreach($sliders as $slider){  
+								$e++; 
+						?>    	
+                           <div class="item">
+                               <a href="<?php bloginfo('url'); ?>/food-court-tiendas/#tiendas">
+	                            <?php if($e==1){ ?>
+                                   <div class="caption foodcourt">
+                                      <p>NUESTRA VARIEDAD </p>
+                                       <h3>FOOD COURT </h3>
+                                       <div class="divider"> </div>
+                                   </div>
+                                <?php } ?>
+                                <div class="box_slide" style="background: url(<?php echo get('piso_de_diseno_imagen_slider',$slider); ?>);"> </div>              
+                               </a>
+                            </div> <!-- item -->
+                        <?php } ?>
+                       </div><!-- box slider  -->
+                   </div>
+<?php endwhile; else: ?>
+<?php endif; ?>
 
 
 

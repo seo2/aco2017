@@ -80,7 +80,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 								$e++; 
 						?>    	
                            <div class="item">
-                               <a href="<?php bloginfo('url'); ?>/food-court/#food-court">
+                               <a href="<?php bloginfo('url'); ?>/food-court-tiendas/#tiendas">
 	                            <?php if($e==1){ ?>
                                    <div class="caption foodcourt">
                                       <p>NUESTRA VARIEDAD </p>
