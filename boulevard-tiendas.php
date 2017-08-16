@@ -13,36 +13,54 @@ Template name: Boulevard Tiendas
       <div class="container">
           <div class="row">
               <section class="tiendas">
+              <div id="tiendas" class="anchor_seccion"></div>
                   <h4 class="divider">boulevard</h4>
-                   <a href="boulevard.php" class="back">< <?php echo $back; ?></a>
+                   <a href="food-court.php" class="back">< <?php echo $back; ?></a>
                       <div class="grid_tiendas center-block">
                           <div class="container">
                               <div class="row" id="caja_tienda">
 	                            <?php
 								if($_GET['page']){
 									$desde 	 = 12 * ($_GET['page'] - 1);
-									$tiendas = $db->rawQuery("select * from pak_tiendas where idioma  = $idioma and tipo = 110 order by nombre limit $desde, 12");
+									$tiendas = $db->rawQuery("select * from pak_tiendas where tipo = 3 order by nombre limit $desde, 12");
 								}else{
-									$tiendas = $db->rawQuery("select * from pak_tiendas where idioma  = $idioma and tipo = 110 order by nombre limit 12");
+									$tiendas = $db->rawQuery("select * from pak_tiendas where tipo = 3 order by nombre limit 12");
 								}
 								if($tiendas){
 									foreach ($tiendas as $t) {   
                                     	$imagen = get_img_tienda($t['punto_interes']);
                                     	if(!$imagen){
-                                        	$imagen 	= "/assets/img/demobgtienda.jpg";
+
+                                    		$imagen 	= '/ws/fotos/'. quitatodo($t['nombre']).'.png';
+                                    		$imagen1    = $imagen;
 										  	$imagen	 	= get_template_directory_uri().$imagen;
+
+
+										  	if(is_url_exist($imagen)){
+		                                    	$params1 	= array( 'width' => 650, 'height' => 650, 'crop' => true );	
+											  	$imagen  	= bfi_thumb( $imagen, $params1 );
+										  	}else{
+	                                        	$imagen 	= "/assets/img/demobgtienda.jpg";
+											  	$imagen	 	= get_template_directory_uri().$imagen;
+										  	}
+										  	
                                     	}else{
 	                                    	$imagen 	= '/ws/uploads/img_'. $t['punto_interes'].'_1.jpg';
 	                                    	$params1 	= array( 'width' => 650, 'height' => 650, 'crop' => true );	
 										  	$imagen	 	= get_template_directory_uri().$imagen;
 										  	$imagen  	= bfi_thumb( $imagen, $params1 );
                                     	}
-                                
-										if($t['pinDescuento'] != '' && $t['pinDescuento'] != '0'){
-											$clase = ' tieneDescuento';
-										}else{
-											$clase = '';
-										}
+                                    	
+                                    	$logo = '/ws/logos/'. quitatodo($t['nombre']).'.jpg';
+                                    	$logo = get_template_directory_uri().$logo;
+                                    	
+                                		if(is_url_exist($logo)){
+	                                		$logo = $logo;
+									  	}else{
+                                        	$logo 	= "/assets/img/logo_381.jpg";
+										  	$logo	= get_template_directory_uri().$logo;
+									  	}
+
                                 ?>
 					            <div class="col-sm-3 caja_tienda"> 
 					            	<div class="item_tienda" id="tienda_<?php echo $t['punto_interes']; ?>">
@@ -51,16 +69,13 @@ Template name: Boulevard Tiendas
                                               <h4 class="nombre_tienda"><?php echo $t['nombre']; ?></h4>
                                                <div class="borde"> </div>
                                               <span class="bg_nombre_tienda"> </span>
-					                        	<span id="adidas" class="overlay_img<?php echo $clase; ?>" data-id="<?php echo $t['punto_interes']; ?>" data-logo="<?php bloginfo('template_url'); ?>/ws/uploads/logo_<?php echo $t['punto_interes']; ?>.jpg" data-desc='<?php echo trim($t['descripcion']); ?>' data-img="<?php echo $imagen; ?>" data-fono="<?php echo $t['telefono_punto_interes']; ?>" data-piso="<?php echo $t['numero_piso']; ?>" data-url="<?php echo $t['url_punto_interes']; ?>" data-mapa="<?php bloginfo('template_url'); ?>/ws/uploads/plano_<?php echo $t['punto_interes']; ?>.jpg" data-nombre="<?php echo $t['nombre']; ?>" data-pindcto="<?php echo $t['pinDescuento']; ?>" data-pinctodesc="<?php echo $t['piiDescripcionDescuento']; ?>"></span>
+					                        	<span id="adidas" class="overlay_img<?php echo $clase; ?>" data-id="<?php echo $t['punto_interes']; ?>" data-logo="<?php echo $logo; ?>" data-desc='<?php echo trim($t['descripcion']); ?>' data-img="<?php echo $imagen; ?>" data-fono="<?php echo $t['telefono_punto_interes']; ?>" data-piso="<?php echo $t['numero_piso']; ?>" data-url="<?php echo $t['url_punto_interes']; ?>" data-mapa="<?php bloginfo('template_url'); ?>/ws/uploads/plano_<?php echo $t['punto_interes']; ?>.jpg" data-nombre="<?php echo $t['nombre']; ?>" ></span>
 					                            <img class="img-responsive" src="<?php echo $imagen; ?>">
 					                        </a>
 				                            <div class="box_logo_tienda">
 				                                <div class="logo_tienda">
-				                                    <img src="<?php bloginfo('template_url'); ?>/ws/uploads/logo_<?php echo $t['punto_interes']; ?>.jpg" alt="" class="img-responsive">
+				                                    <img src="<?php echo $logo; ?>" alt="" class="img-responsive">
 				                                </div> <!-- logo_tienda -->
-                                            	<?php if($t['pinDescuento'] != '' && $t['pinDescuento'] != '0'){ ?>
-                                            		<img src="<?php bloginfo('template_url'); ?>/assets/img/logotravellersxs.png" alt="" class="img-responsive logotravellersxs">
-												<?php } ?>
 				                            </div> <!-- box logo tienda -->
 				                        </div> <!--  tienda -->
 				                    </div> <!-- item tienda -->
@@ -85,7 +100,7 @@ Template name: Boulevard Tiendas
       </div>
 
 <?php // include('include-boulevard-otras-tiendas.php'); ?>
-<div id="pages" style="display:none;" data-pagina="boulevard-tiendas">
+<div id="pages" style="display:none;" data-pagina="food-court-tiendas">
 <?php 
 	$postperpage = 12;
 	$rowcount = 0;

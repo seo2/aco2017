@@ -67,12 +67,12 @@ if(ICL_LANGUAGE_CODE=='en'){
                                             </a>
                                             <div class="box_logo_destacado">
                                             	<div class="logo_destacado center-block">
-                                                	<img src="<?php bloginfo('template_url'); ?>/assets/img/demo_logo_cine.png" alt="" class="img-responsive">
+                                                	<img src="<?php bloginfo('template_url'); ?>/assets/img/cinemark.jpg" alt="" class="img-responsive">
                                               	</div> <!-- logo_tienda -->
                                                 <div class="desc_destacado visible-xs">
                                                     <h3>¡Descubre los mejores estrenos!</h3>
-                                                    <p>Si eres amante del cine, entra aquí y conoce las últimas novedades en la cartelera de Hoyts Parque Arauco.</p>
-                                                    <a href="http://www.cinehoyts.cl/cartelera/santiago-oriente/parque-arauco" target="_blank">www.cinehoyts.cl</a>
+                                                    <p>Si eres amante del cine, entra aquí y conoce las últimas novedades en la cartelera de Cinemark Arauco Coronel.</p>
+                                                    <a href="<?php echo get('caluga_cine_link'); ?>" target="_blank">www.cinemark.cl</a>
                                                 </div>
                                             </div> <!-- box logo tienda -->
                                         </div> <!--  tienda -->
@@ -96,6 +96,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 									</div> <!-- box horizontal -->
 								</div> <!-- col sm 12 -->
 							</div><!-- fin row -->
+<!--
 						    <div class="row">
 						        <section class="entretencion clearfix">				    
 							   	<?php
@@ -120,6 +121,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 									} ?>   
 							    </section>
 							</div>
+-->
 							<?php endwhile; else: ?>
 							<?php endif; ?>             
                         </div> <!-- container grilla novedades -->

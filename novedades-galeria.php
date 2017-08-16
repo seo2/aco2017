@@ -57,6 +57,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 					}
 				?>
 	          </div>
+<!--
 	            <section class="galeria_videos ">
 	              <h4 class="divider">videos</h4>
 	                <div class="container">
@@ -74,7 +75,6 @@ if(ICL_LANGUAGE_CODE=='en'){
 	                    	<div class="col-sm-6">
 	                        <div id="video<?php echo $i; ?>" class="box_video" data-video="<?php echo get('id_video_youtube'); ?>">
 	                            <div class="lente_video"></div>
-	                            <!-- 560 x 300 -->
 	                            <div class="cap_video" style="background: url(<?php echo get_the_post_thumbnail_url(); ?>);"></div>
 	                            <div class="yt-video embed-responsive embed-responsive-16by9">
 	                              <iframe  class="videito video<?php echo $i; ?>" width="420" height="315" src="" frameborder="0" allowfullscreen></iframe> 
@@ -92,7 +92,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 	                      
 	
 	                  </div>
-	                </div> <!-- container-videos -->
+	                </div>
 	
 	            </section>
 	            <div class="box_ver_mas_tiendas text-center">
@@ -101,7 +101,8 @@ if(ICL_LANGUAGE_CODE=='en'){
 	                <img src="<?php bloginfo('template_url'); ?>/assets/img/arrow_down.png" alt="" class="img-responsive center-block arrow_down">
 	            </a>
 	          </div>
-	        </section> <!-- entretencion -->
+-->
+	        </section> 
 	      </div><!-- row -->
 
 <div id="pages" style="display:none;" data-pagina="tiendas">
@@ -111,7 +112,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 	$args = array(
 		'post_type' 	=> 'galeria',
 		'posts_per_page'=> -1,
-		'category_name'		=> 'novedades'
+		'category_name'	=> 'novedades'
 	);
 
     $query = new WP_Query( $args ); 
@@ -140,7 +141,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 
 <script>
 <?php if($paginas<=1){ ?>
-	$('.box_ver_mas_tiendas2').hide();
+	$('.box_ver_mas_tiendas').hide();
 <?php } ?>	
 	
 	

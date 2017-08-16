@@ -44,7 +44,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 	}
 	function get_nom_categoria($idioma, $id){
 		$db 	= new MysqliDb (DBHOST, DBUSER, DBPASS, DBNAME);
-		$tiendas = $db->rawQuery("select * from pak_categorias where idioma = $idioma and id_categoria = 128 and id_subcategoria = $id limit 1");
+		$tiendas = $db->rawQuery("select * from pak_categorias where id_categoria = 128 and id_subcategoria = $id limit 1");
 		if($tiendas){
 			foreach ($tiendas as $t) {
 				$imagenes = $t['nombre_subcategoria'];
@@ -63,17 +63,41 @@ if(ICL_LANGUAGE_CODE=='en'){
 
 	<?php if(isset($_GET['tiendaID'])){ 
 		$punto_interes = $_GET['tiendaID'];
-		$tiendas = $db->rawQuery("select * from pak_tiendas where idioma  = $idioma and punto_interes = $punto_interes");
+		$tiendas = $db->rawQuery("select * from pak_tiendas where punto_interes = $punto_interes");
 		if($tiendas){
 			foreach ($tiendas as $t) {   
-		    	$imagen = get_img_tienda($t['punto_interes']);
-		    	if(!$imagen){
-		        	$imagen = "assets/img/demobgtienda.jpg";
-		    	}else{
-	                $imagen = 'ws/uploads/img_'. $t['punto_interes'].'_1.jpg';
-		    	}
+            	$imagen = get_img_tienda($t['punto_interes']);
+            	if(!$imagen){
+
+            		$imagen 	= '/ws/fotos/'. quitatodo($t['nombre']).'.png';
+				  	$imagen	 	= get_template_directory_uri().$imagen;
+
+				  	if(is_url_exist($imagen)){
+                    	$params1 	= array( 'width' => 650, 'height' => 650, 'crop' => true );	
+					  	$imagen  	= bfi_thumb( $imagen, $params1 );
+				  	}else{
+                    	$imagen 	= "/assets/img/demobgtienda.jpg";
+					  	$imagen	 	= get_template_directory_uri().$imagen;
+				  	}
+				  	
+            	}else{
+                	$imagen 	= '/ws/uploads/img_'. $t['punto_interes'].'_1.jpg';
+                	$params1 	= array( 'width' => 650, 'height' => 650, 'crop' => true );	
+				  	$imagen	 	= get_template_directory_uri().$imagen;
+				  	$imagen  	= bfi_thumb( $imagen, $params1 );
+            	}
+            	
+            	$logo = '/ws/logos/'. quitatodo($t['nombre']).'.jpg';
+            	$logo = get_template_directory_uri().$logo;
+            	
+        		if(is_url_exist($logo)){
+            		$logo = $logo;
+			  	}else{
+                	$logo 	= "/assets/img/logo_381.jpg";
+				  	$logo	= get_template_directory_uri().$logo;
+			  	}
+            	
 		    	$nombre = $t['nombre'];
-				$logo 	= "ws/uploads/logo_". $t['punto_interes'].".jpg";
 				$desc 	= trim($t['descripcion']);
 				$fono	=$t['telefono_punto_interes'];
 				$piso	= $t['numero_piso']; 

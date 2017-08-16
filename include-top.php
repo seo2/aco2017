@@ -39,16 +39,13 @@ if(ICL_LANGUAGE_CODE=='en'){
 	$btn1 = "Veja todas as nossas lojas";
 	$btn2 = "Veja mais";
 }else{ 	
-    $menu2 = "distrito de lujo";
-    $menu3 = "boulevard";
-    $menu4 = "piso diseño";
+    $menu3 = "Food Court";
+    $menu4 = "Bazar Central";
     $menu5 = "entretención";
     $menu6 = "novedades";
     $menu7 = "tiendas";
-	  $menu8 = "arauco tag";
-    $menu9 = "revista detalle";
+	$menu8 = "Galería";
     $menu10 = "servicio al cliente";
-    $menu11 = "travellers";
     
 	$tit1 = "horarios";
 	$tit2 = "cómo llegar";
@@ -78,9 +75,10 @@ if(ICL_LANGUAGE_CODE=='en'){
                  <span class="icon-bar bottom_bar"></span>
                </button>
                   <div class="logo">
-                    <a href="<?php bloginfo('url'); ?>"> parque arauco</a>
+                    <a href="<?php bloginfo('url'); ?>"> Arauco Coronel</a>
                   </div> <!-- brand -->
 
+<!--
                     <div id="lang_switcher" class="visible-xs visible-sm">
                        <select name="language" class="selectpicker show-menu-arrow"> 
                             <option selected="" value="/esp/">ESP</option>
@@ -88,18 +86,22 @@ if(ICL_LANGUAGE_CODE=='en'){
                              <option value="/por/">POR</option>
                       </select>
                          
-                      </div>            
+                      </div>  
+
                   <div class="lang ">
                     <ul class="hidden-xs hidden-sm">
 						<?php icl_post_languages(); ?>
                     </ul>
                    </div>  
+-->
                    
                 <div class="rrss hidden-xs hidden-sm">
                    <ul>
-                     <li><a href="https://www.facebook.com/parauco" target="_blank"><i class="fa fa-facebook hvr-float" aria-hidden="true"></i></a></li>
+                     <li><a href="https://www.facebook.com/araucocoronel/" target="_blank"><i class="fa fa-facebook hvr-float" aria-hidden="true"></i></a></li>
+<!--
                      <li><a href="https://www.instagram.com/parquearauco/" target="_blank"><i class="fa fa-instagram hvr-float" aria-hidden="true"></i></a></li>
                      <li><a href="https://twitter.com/parquearauco" target="_blank"><i class="fa fa-twitter hvr-float" aria-hidden="true"></i></a></li>
+-->
 					 <li><a href="<?php bloginfo('site_url'); ?>/horarios"><i class="fa fa-clock-o hvr-float" aria-hidden="true"></i></a></li>
                    </ul>
                 </div> 
@@ -119,12 +121,11 @@ if(ICL_LANGUAGE_CODE=='en'){
                             <div class="col-sm-12 col-md-6">
                                  <ul class="nav navbar-nav">
                                      <li class="active"><a 			href="<?php bloginfo('url'); ?>">Home</a></li>
-                                     <li><a id="btn_distrito" 		href="<?php bloginfo('url'); ?>/distrito-de-lujo"><?php echo $menu2; ?></a></li>
-                                     <li><a id="btn_boulevard" 		href="<?php bloginfo('url'); ?>/boulevard#boulevard"><?php echo $menu3; ?></a></li>
-                                     <li><a id="btn_piso" 			href="<?php bloginfo('url'); ?>/piso-diseno"><?php echo $menu4; ?></a></li>
+                                     <li><a id="btn_tiendas" 		href="<?php bloginfo('url'); ?>/tiendas#tiendas"><?php echo $menu7; ?></a></li>
+                                     <li><a id="btn_boulevard" 		href="<?php bloginfo('url'); ?>/food-court#food-court"><?php echo $menu3; ?></a></li>
+                                     <li><a id="btn_piso" 			href="<?php bloginfo('url'); ?>/bazar-central"><?php echo $menu4; ?></a></li>
                                      <li><a id="btn_entretencion" 	href="<?php bloginfo('url'); ?>/novedades#entretencion"><?php echo $menu5; ?></a></li>
                                      <li><a id="btn_novedades" 		href="<?php bloginfo('url'); ?>/novedades#novedades"><?php echo $menu6; ?></a></li>
-                                     <li><a id="btn_tiendas" 		href="<?php bloginfo('url'); ?>/tiendas#tiendas"><?php echo $menu7; ?></a></li>
                                 </ul>
                             </div>
 
@@ -135,10 +136,8 @@ if(ICL_LANGUAGE_CODE=='en'){
                                        <li class="hidden-xs hidden-sm"><a class="invisible" href="javascript:void(0);">&nbsp</a></li>
                                        <li class="hidden-xs hidden-sm"><a class="invisible" href="javascript:void(0);">&nbsp</a></li>
                                        <li class="hidden-xs hidden-sm"><a class="invisible" href="javascript:void(0);">&nbsp</a></li>
-                                       <li><a href="<?php bloginfo('url'); ?>/arauco-tag"><?php echo $menu8; ?></a></li>
-<!--                                        <li><a href="http://www.revistadetalle.cl/" target="_blank"><?php echo $menu9; ?></a></li> -->
+                                       <li><a href="<?php bloginfo('url'); ?>/novedades-galeria/#galerias"><?php echo $menu8; ?></a></li>
                                        <li><a href="<?php bloginfo('url'); ?>/servicio-al-cliente"><?php echo $menu10; ?></a></li>
-                                       <li><a href="<?php bloginfo('url'); ?>/travellers"><?php echo $menu11; ?></a></li>
                                   </ul>
                             </div>
 
@@ -162,7 +161,7 @@ if(ICL_LANGUAGE_CODE=='en'){
                                       </li>
 
                                       <li>
-                                            <a href="https://www.google.es/maps/place/Parque+Arauco/@-33.4019089,-70.5798102,18z/data=!4m13!1m7!3m6!1s0x9662cf4657be4221:0xedf29683ef50290a!2sAv+Presidente+Kennedy,+Regi%C3%B3n+Metropolitana,+Chile!3b1!8m2!3d-33.3977769!4d-70.5709762!3m4!1s0x9662cf26243dcc31:0xc9aacb64a9fec91!8m2!3d-33.4018773!4d-70.5792048" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i><?php echo $tit2; ?> </a>
+                                            <a href="https://www.google.cl/maps/place/Mall+Arauco+Coronel/@-37.013895,-73.1603369,712m/data=!3m1!1e3!4m13!1m7!3m6!1s0x9669c11972020ecd:0xf2e87d4931e8916e!2sCarlos+Pratt+Gonz%C3%A1lez+901,+Coronel,+Regi%C3%B3n+del+B%C3%ADo+B%C3%ADo!3b1!8m2!3d-37.0145719!4d-73.1580195!3m4!1s0x0:0x9c764d06a239f15f!8m2!3d-37.0136476!4d-73.15997?hl=es" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i><?php echo $tit2; ?> </a>
                                       </li>
                                     </ul>
                               </div>

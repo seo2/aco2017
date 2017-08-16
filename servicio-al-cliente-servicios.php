@@ -50,7 +50,7 @@ if(ICL_LANGUAGE_CODE=='en'){
                <h4 class="divider"><?php echo $tit1; ?></h4> 
             </div>
             <div class="col-sm-12 col-md-2">
-                 <a href="servicio-al-cliente.php" class="back">< <?php echo $back; ?></a>
+                 <a href="<?php bloginfo('url'); ?>/servicio-al-cliente" class="back">< <?php echo $back; ?></a>
             </div>
           </div>
         </div>
@@ -66,6 +66,7 @@ if(ICL_LANGUAGE_CODE=='en'){
           		</section><!-- travellers servicios generales -->
 		  		<section class="travellers_servicios_adicionales clearfix">
 		<?php 
+/*
 			    $detect = new Mobile_Detect();
 			    	 
 				if ($detect->isMobile()) { 
@@ -73,6 +74,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 				}else{ 	 
 				  	include('include-travellers-servicios-adicionales-desktop.php');
 				}
+*/
 		?>
         		</section>
     		</div> <!-- row -->

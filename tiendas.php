@@ -67,24 +67,24 @@ if(ICL_LANGUAGE_CODE=='en'){
 									$buscar = filter_var($_GET["busqueda"], FILTER_SANITIZE_STRING);
 									if($_GET['pagina']){
 										$desde = 12 * ($_GET['pagina'] - 1);
-										$tiendas = $db->rawQuery("select * from pak_tiendas where idioma = $idioma and (descripcion LIKE '%$buscar%' OR nombre LIKE '%$buscar%') ORDER BY nombre limit $desde, 12");
+										$tiendas = $db->rawQuery("select * from pak_tiendas where (descripcion LIKE '%$buscar%' OR nombre LIKE '%$buscar%') ORDER BY nombre limit $desde, 12");
 									}else{
-										$tiendas = $db->rawQuery("select * from pak_tiendas where idioma = $idioma and (descripcion LIKE '%$buscar%' OR nombre LIKE '%$buscar%') ORDER BY nombre limit 12");
+										$tiendas = $db->rawQuery("select * from pak_tiendas where (descripcion LIKE '%$buscar%' OR nombre LIKE '%$buscar%') ORDER BY nombre limit 12");
 									}
 								}elseif($_GET['catID']){
 									$buscar = $_GET['catID'];
 									if($_GET['pagina']){
 										$desde = 12 * ($_GET['pagina'] - 1);
-										$tiendas = $db->rawQuery("SELECT * FROM pak_tiendas a, pak_tiendas_scat b WHERE a.idioma = $idioma and b.idioma = a.idioma and b.sub_categoria = $buscar AND a.punto_interes = b.punto_interes ORDER BY a.nombre limit $desde,12");
+										$tiendas = $db->rawQuery("SELECT * FROM pak_tiendas a, pak_tiendas_scat b WHERE b.sub_categoria = $buscar AND a.punto_interes = b.punto_interes ORDER BY a.nombre limit $desde,12");
 									}else{
-										$tiendas = $db->rawQuery("SELECT * FROM pak_tiendas a, pak_tiendas_scat b WHERE a.idioma = $idioma and b.idioma = a.idioma and b.sub_categoria = $buscar AND a.punto_interes = b.punto_interes ORDER BY a.nombre limit 12");
+										$tiendas = $db->rawQuery("SELECT * FROM pak_tiendas a, pak_tiendas_scat b WHERE b.sub_categoria = $buscar AND a.punto_interes = b.punto_interes ORDER BY a.nombre limit 12");
 									}
 								}else{
 									if($_GET['pagina']){
 										$desde 	 = 12 * ($_GET['pagina'] - 1);
-										$tiendas = $db->rawQuery("select * from pak_tiendas where idioma = $idioma and tipo NOT IN(119,131,110) order by nombre limit $desde, 12");
+										$tiendas = $db->rawQuery("select * from pak_tiendas where tipo = 1 order by nombre limit $desde, 12");
 									}else{
-										$tiendas = $db->rawQuery("select * from pak_tiendas where idioma = $idioma and tipo NOT IN(119,131,110) order by nombre limit 12");
+										$tiendas = $db->rawQuery("select * from pak_tiendas where tipo = 1 order by nombre limit 12");
 									}
 								}
 		                            
@@ -92,14 +92,37 @@ if(ICL_LANGUAGE_CODE=='en'){
 									foreach ($tiendas as $t) {   
                                     	$imagen = get_img_tienda($t['punto_interes']);
                                     	if(!$imagen){
-                                        	$imagen 	= "/assets/img/demobgtienda.jpg";
+
+                                    		$imagen 	= '/ws/fotos/'. quitatodo($t['nombre']).'.png';
+                                    		$imagen1    = $imagen;
 										  	$imagen	 	= get_template_directory_uri().$imagen;
+
+
+										  	if(is_url_exist($imagen)){
+		                                    	$params1 	= array( 'width' => 650, 'height' => 650, 'crop' => true );	
+											  	$imagen  	= bfi_thumb( $imagen, $params1 );
+										  	}else{
+	                                        	$imagen 	= "/assets/img/demobgtienda.jpg";
+											  	$imagen	 	= get_template_directory_uri().$imagen;
+										  	}
+										  	
                                     	}else{
 	                                    	$imagen 	= '/ws/uploads/img_'. $t['punto_interes'].'_1.jpg';
 	                                    	$params1 	= array( 'width' => 650, 'height' => 650, 'crop' => true );	
 										  	$imagen	 	= get_template_directory_uri().$imagen;
 										  	$imagen  	= bfi_thumb( $imagen, $params1 );
                                     	}
+                                    	
+                                    	$logo = '/ws/logos/'. quitatodo($t['nombre']).'.jpg';
+                                    	$logo = get_template_directory_uri().$logo;
+                                    	
+                                		if(is_url_exist($logo)){
+	                                		$logo = $logo;
+									  	}else{
+                                        	$logo 	= "/assets/img/logo_381.jpg";
+										  	$logo	= get_template_directory_uri().$logo;
+									  	}
+                                    	
                                 
 										if($t['pinDescuento'] != '' && $t['pinDescuento'] != '0'){
 											$clase = ' tieneDescuento';
@@ -114,16 +137,13 @@ if(ICL_LANGUAGE_CODE=='en'){
                                               <h4 class="nombre_tienda"><?php echo $t['nombre']; ?></h4>
                                                <div class="borde"> </div>
                                               <span class="bg_nombre_tienda"> </span>
-                                                <span id="adidas" class="overlay_img<?php echo $clase; ?>" data-id="<?php echo $t['punto_interes']; ?>" data-logo="<?php bloginfo('template_url'); ?>/ws/uploads/logo_<?php echo $t['punto_interes']; ?>.jpg" data-desc='<?php echo trim($t["descripcion"]); ?>' data-img="<?php echo $imagen; ?>" data-fono="<?php echo $t['telefono_punto_interes']; ?>" data-piso="<?php echo $t['numero_piso']; ?>" data-url="<?php echo $t['url_punto_interes']; ?>" data-mapa="<?php bloginfo('template_url'); ?>/ws/uploads/plano_<?php echo $t['punto_interes']; ?>.jpg" data-nombre="<?php echo $t['nombre']; ?>" data-tipo="<?php echo $t['tipo']; ?>" data-pindcto="<?php echo $t['pinDescuento']; ?>" data-pinctodesc="<?php echo $t['piiDescripcionDescuento']; ?>"></span>
+                                                <span id="adidas" class="overlay_img<?php echo $clase; ?>" data-clander="<?php echo $imagen1; ?>" data-id="<?php echo $t['punto_interes']; ?>" data-logo="<?php echo $logo; ?>" data-desc='<?php echo trim($t["descripcion"]); ?>' data-img="<?php echo $imagen; ?>" data-fono="<?php echo $t['telefono_punto_interes']; ?>" data-piso="<?php echo $t['numero_piso']; ?>" data-url="<?php echo $t['url_punto_interes']; ?>" data-mapa="<?php bloginfo('template_url'); ?>/ws/uploads/plano_<?php echo $t['punto_interes']; ?>.jpg" data-nombre="<?php echo $t['nombre']; ?>" data-tipo="<?php echo $t['tipo']; ?>" data-pindcto="<?php echo $t['pinDescuento']; ?>" data-pinctodesc="<?php echo $t['piiDescripcionDescuento']; ?>"></span>
                                                 <img class="img-responsive" src="<?php echo $imagen; ?>">
                                             </a>
 											<div class="box_logo_tienda">
                                             	<div class="logo_tienda">
-                                                	<img src="<?php bloginfo('template_url'); ?>/ws/uploads/logo_<?php echo $t['punto_interes']; ?>.jpg" alt="" class="img-responsive">
+                                                	<img src="<?php echo $logo; ?>" alt="" class="img-responsive">
                                             	</div> <!-- logo_tienda -->
-                                            	<?php if($t['pinDescuento'] != '' && $t['pinDescuento'] != '0'){ ?>
-                                            		<img src="<?php bloginfo('template_url'); ?>/assets/img/logotravellersxs.png" alt="" class="img-responsive logotravellersxs">
-												<?php } ?>
                                         	</div> <!-- box logo tienda -->
                                         </div> <!--  tienda -->
                                     </div> <!-- item tienda -->
@@ -153,7 +173,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 
 	if($_GET['busqueda']){
 		
-		$tiendas = $db->rawQuery("select * from pak_tiendas where idioma = $idioma and (descripcion LIKE '%$buscar%' OR nombre LIKE '%$buscar%') ORDER BY nombre");
+		$tiendas = $db->rawQuery("select * from pak_tiendas where (descripcion LIKE '%$buscar%' OR nombre LIKE '%$buscar%') ORDER BY nombre");
 		if($tiendas){
 			foreach ($tiendas as $t) { 
 				$rowcount++;
@@ -161,7 +181,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 		}
 		$cola = "&busqueda=".$buscar;		
 	}elseif($_GET['catID']){
-		$tiendas = $db->rawQuery("SELECT * FROM pak_tiendas a, pak_tiendas_scat b WHERE a.idioma = $idioma and b.idioma = a.idioma and b.sub_categoria = $buscar AND a.punto_interes = b.punto_interes ORDER BY a.nombre");
+		$tiendas = $db->rawQuery("SELECT * FROM pak_tiendas a, pak_tiendas_scat b WHERE b.sub_categoria = $buscar AND a.punto_interes = b.punto_interes ORDER BY a.nombre");
 		if($tiendas){
 			foreach ($tiendas as $t) { 
 				$rowcount++;
@@ -169,7 +189,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 		}
 		$cola = "&catID=$buscar";	
 	}else{
-		$db->where('tipo', Array(119, 131,110), 'NOT IN');
+		$db->where('tipo', Array(2,3), 'NOT IN');
 		$rowcount = $db->getValue ("pak_tiendas", "count(*)");
 		$cola = "";
 	}

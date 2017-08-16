@@ -88,7 +88,7 @@
 							$id_subcategoria 	 = $sc['id_subcategoria'];
 							$nombre_subcategoria = $sc['nombre_subcategoria']; 
 							$imagen_subcategoria = $sc['imagen_subcategoria'];  
-							$participante = $db->rawQuery("select * from pak_categorias where idioma = $idioma and id_categoria = $id_categoria and id_subcategoria = $id_subcategoria");
+							$participante = $db->rawQuery("select * from pak_categorias where id_categoria = $id_categoria and id_subcategoria = $id_subcategoria");
 							if($participante){
 								foreach ($participante as $p) {
 									$existe = true;

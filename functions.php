@@ -39,7 +39,7 @@ function theme_styles() {
 	wp_enqueue_style('style-jasny', 'https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css', array(), '1', 'screen' );
 	wp_enqueue_style('style-valio', get_template_directory_uri() . '/assets/css/formValidation.min.css', array(), '1', 'screen' );
 	wp_enqueue_style('style-dp', get_template_directory_uri() . '/assets/css/datepicker.min.css', array(), '1.2', 'screen' );
-	wp_enqueue_style('style-pak', get_template_directory_uri() . '/assets/css/custom.css', array(), '1.2.6', 'screen' );
+	wp_enqueue_style('style-aco', get_template_directory_uri() . '/assets/css/custom.css', array(), '1.2.8', 'screen' );
 
 }
 
@@ -316,6 +316,39 @@ function example_admin_menu() {
     global $submenu;
     $url = get_site_url().'/admin';
     $submenu['index.php'][] = array('Formularios', 'manage_options', $url);
+}
+
+function quitatodo($string){
+	$colA = str_replace(' ', '', $string);
+	$colA = str_replace('_', '', $colA);
+	$colA = str_replace('-', '', $colA);
+	$colA = str_replace('/', '', $colA);
+	$colA = str_replace(')', '', $colA);
+	$colA = str_replace('(', '', $colA);
+	$colA = str_replace('&ntilde;', 'n', $colA);
+	$colA = str_replace('&ouml;', 'o', $colA);
+	$colA = str_replace('ö', 'o', $colA);
+	$colA = str_replace('ñ', 'n', $colA);
+	$colA = str_replace('%', 'porc', $colA);
+	$colA = str_replace('&', 'porc', $colA);
+	$colA = str_replace('generico', '', $colA);
+	$colA = strtolower($colA);
+	return $colA;
+}
+
+function is_url_exist($url){
+    $ch = curl_init($url);    
+    curl_setopt($ch, CURLOPT_NOBODY, true);
+    curl_exec($ch);
+    $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if($code == 200){
+       $status = true;
+    }else{
+      $status = false;
+    }
+    curl_close($ch);
+   return $status;
 }
 
 

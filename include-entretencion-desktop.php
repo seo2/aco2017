@@ -56,13 +56,26 @@
                     <div class="box_cartelera clearfix">
                     	<div class="row">
                         	<div class="col-xs-8">
-                            	<a href="http://www.centromori.cl/" target="_blank">ver cartelera y precios</a>
+                            	<a href="https://www.happyland.cl/mall-costa-pacifico/" target="_blank">Más información</a>
                             </div>
                             <div class="col-xs-4">
-                            	<img src="<?php bloginfo('template_url'); ?>/assets/img/logo_mori.png" alt="" class="img-responsive pull-right">
+                            	<img src="<?php bloginfo('template_url'); ?>/assets/img/logo_happyland.png" alt="" class="img-responsive pull-right">
                             </div> 
                         </div>    
                     </div>
+                    <?php }elseif($post->ID == 434){ ?>
+<!--
+                    <div class="box_cartelera clearfix">
+                    	<div class="row">
+                        	<div class="col-xs-8">
+                            	<a href="http://www.cinemark.cl/theatres/coronel" target="_blank">Más información</a>
+                            </div>
+                            <div class="col-xs-4">
+                            	<img src="<?php bloginfo('template_url'); ?>/assets/img/cinemark.jpg" alt="" class="img-responsive pull-right">
+                            </div> 
+                        </div>    
+                    </div>
+-->
                     <?php } ?>
                 </div>
                 <div class="col-md-6 col-md-pull-6 ">

@@ -105,9 +105,9 @@ function tiene_descuentos($idioma, $catID){
 						}else{
 							if($_GET['pagina']){
 								$desde 	 = 12 * ($_GET['pagina'] - 1);
-								$tiendas = $db->rawQuery("select * from pak_tiendas where idioma = $idioma and pinDescuento != '' AND pinDescuento != '0' order by nombre limit $desde, 12");
+								$tiendas = $db->rawQuery("select * from pak_tiendas where pinDescuento != '' AND pinDescuento != '0' order by nombre limit $desde, 12");
 							}else{
-								$tiendas = $db->rawQuery("select * from pak_tiendas where idioma = $idioma and pinDescuento != '' AND pinDescuento != '0' order by nombre limit 12");
+								$tiendas = $db->rawQuery("select * from pak_tiendas where pinDescuento != '' AND pinDescuento != '0' order by nombre limit 12");
 							}
 						}
                             

@@ -53,9 +53,13 @@ if(ICL_LANGUAGE_CODE=='en'){
 								$e++; 
 						?>    	                        
                           <div class="item">
-                              <a href="<?php bloginfo('url'); ?>/distrito-de-lujo">
+                              <a href="<?php bloginfo('url'); ?>/tiendas#tiendas">
 	                            <?php if($e==1){ ?>
-                                <div class="logo_seccion logo_distrito" style="background: url(<?php bloginfo('template_url'); ?>/assets/img/logo_distrito.svg);"> </div>
+                                   <div class="caption tiendas">
+                                      <p>NUESTRAS </p>
+                                       <h3>TIENDAS </h3>
+                                       <div class="divider"> </div>
+                                   </div>
                                 <?php } ?>
                                 <div class="box_slide" style="background: url(<?php echo get('distrito_de_lujo_imagen_slider',$slider); ?>);"> </div>
                               </a>
@@ -68,32 +72,6 @@ if(ICL_LANGUAGE_CODE=='en'){
 
               <div class="col-sm-6 col-md-6">
                   <div class="box">
-                        <div class="box_slider owl-carousel owl-theme ">
-					   	<?php
-						   	$e = 0;
-							$sliders = get_order_group('boulevard_imagen_slider');
-							foreach($sliders as $slider){  
-								$e++; 
-						?>  
-                              <div class="item">
-                                  <a href="<?php bloginfo('url'); ?>/boulevard">     
-	                            <?php if($e==1){ ?>
-                                       <div class="caption">
-                                          <p>&nbsp </p>
-                                           <h3>boulevard </h3>
-                                           <div class="divider"> </div>
-                                       </div>
-                                <?php } ?>
-                                <div class="box_slide" style="background: url(<?php echo get('boulevard_imagen_slider',$slider); ?>);"> </div>                       
-                                  </a>
-                               </div> <!-- item -->
-                        <?php } ?>
-                        </div><!-- box slider  -->
-                 </div>
-              </div> <!-- slider zona boulevard -->
-
-              <div class="col-sm-6 col-md-6">
-                  <div class="box">
                       <div class="box_slider owl-carousel owl-theme ">
 					   	<?php
 						   	$e = 0;
@@ -102,9 +80,13 @@ if(ICL_LANGUAGE_CODE=='en'){
 								$e++; 
 						?>    	
                            <div class="item">
-                               <a href="<?php bloginfo('url'); ?>/piso-diseno">
+                               <a href="<?php bloginfo('url'); ?>/food-court/#food-court">
 	                            <?php if($e==1){ ?>
-                                <div class="logo_seccion logo_piso_diseno" style="background: url(<?php bloginfo('template_url'); ?>/assets/img/logo_piso_diseno.svg);"> </div> 
+                                   <div class="caption foodcourt">
+                                      <p>NUESTRA VARIEDAD </p>
+                                       <h3>FOOD COURT </h3>
+                                       <div class="divider"> </div>
+                                   </div>
                                 <?php } ?>
                                 <div class="box_slide" style="background: url(<?php echo get('piso_de_diseno_imagen_slider',$slider); ?>);"> </div>              
                                </a>
@@ -124,9 +106,13 @@ if(ICL_LANGUAGE_CODE=='en'){
 								$e++; 
 						?>    	
                               <div class="item">
-                                  <a href="<?php bloginfo('url'); ?>/travellers">                                   
+                                  <a href="<?php bloginfo('url'); ?>/novedades-galeria/#galerias">                                   
 	                            <?php if($e==1){ ?>
-                                        <div class="logo_seccion logo_travellers" style="background: url(<?php bloginfo('template_url'); ?>/assets/img/logo_travellers_blanco.svg);"> </div>
+                                   <div class="caption galeria">
+                                      <p>VARIEDAD DE PRODUCTOS </p>
+                                       <h3>BAZAR CENTRAL </h3>
+                                       <div class="divider"> </div>
+                                   </div>
                                 <?php } ?>
                                 <div class="box_slide" style="background: url(<?php echo get('travellers_imagen_slider',$slider); ?>);"> </div>                       
                                   </a>
@@ -135,6 +121,32 @@ if(ICL_LANGUAGE_CODE=='en'){
                           </div><!-- box slider  -->
                    </div><!-- travellers -->
               </div>
+
+              <div class="col-sm-6 col-md-6">
+                  <div class="box">
+                        <div class="box_slider owl-carousel owl-theme ">
+					   	<?php
+						   	$e = 0;
+							$sliders = get_order_group('boulevard_imagen_slider');
+							foreach($sliders as $slider){  
+								$e++; 
+						?>  
+                              <div class="item">
+                                  <a href="<?php bloginfo('url'); ?>/novedades/#entretencion">     
+	                            <?php if($e==1){ ?>
+                                       <div class="caption entretencion">
+                                          <p>ZONA </p>
+                                           <h3>ENTRETENCIÓN </h3>
+                                           <div class="divider"> </div>
+                                       </div>
+                                <?php } ?>
+                                <div class="box_slide" style="background: url(<?php echo get('boulevard_imagen_slider',$slider); ?>);"> </div>                       
+                                  </a>
+                               </div> <!-- item -->
+                        <?php } ?>
+                        </div><!-- box slider  -->
+                 </div>
+              </div> <!-- slider zona boulevard -->
                 
               <div class="col-sm-12">
                     <!-- NOVEDADES -->
@@ -173,73 +185,6 @@ if(ICL_LANGUAGE_CODE=='en'){
               </div>
                 
             </div> <!-- row -->
-            <div class="row">
-              <div class="col-sm-6 col-md-6">
-                  <div class="box">
-                        <!-- arauco tag -->
-                        <a href="<?php bloginfo('url'); ?>/arauco-tag" class="box_enlace">
-                          <div class="box_img" style="background: url(<?php bloginfo('template_url'); ?>/assets/img/bg_arauco_tag.png);"> </div>
-                          <div class="caption">
-                              <h3><?php echo $tit1; ?></h3>
-                              <div class="divider"> &nbsp </div>
-                          </div>
-                        </a>
-                 </div> <!-- arauco tag -->
-                      
-                  <div class="box">
-                     <div class="box_slider owl-carousel owl-theme">
-					   	<?php
-						   	$e = 0;
-							$sliders = get_order_group('galerias_imagen_slider');
-							foreach($sliders as $slider){  
-								$e++; 
-						?>    	
-                           <div class="item">
-                             <a href="<?php bloginfo('url'); ?>/novedades-galeria#galerias">
-	                            <?php if($e==1){ ?>
-                                <div class="caption">
-                                    <h3><?php echo $tit2; ?></h3>
-                                    <div class="divider"> &nbsp </div>
-                                </div>
-                                <?php } ?>
-                                <div class="box_slide" style="background: url(<?php echo get('galerias_imagen_slider',$slider); ?>);"> </div>   
-                             </a>
-                           </div>
-                        <?php } ?>
-                       </div><!-- box slider  -->
-                </div> <!-- galeria -->
-              </div>
-              <div class="col-sm-6 col-md-6">
-                <div class="image_dynamic">
-                   <!--  <div class="lente"></div> -->
-                   <!-- SLIDER DESTACADO HOME -->
-                   <div class="slider_destacado_home owl-carousel owl-theme box">
-					   	<?php
-						   	$e = 0;
-							$sliders = get_order_group('destacado_grande_imagen');
-							foreach($sliders as $slider){  
-								$e++; 
-						?>    	
-                      <div class="item">
-                         <!--  <div class="image_dynamic_portada" style="background: url(<?php bloginfo('template_url'); ?>/assets/img/tendencias.gif);"> </div> -->
-                          <img class="img-responsive" src="<?php echo get('destacado_grande_imagen',$slider); ?>" alt="">
-                          <?php 
-	                          if(get('destacado_grande_link',$slider)){
-                          ?>
-                            <a href="<?php echo get('destacado_grande_link',$slider); ?>" class="btn btn-default btn_rojo2"  role="button">ver más</a>
-                          <?php } ?>
-                      </div>
-                        <?php } ?>
-                   </div>
-                   <!--  <div class="caption_revista" >
-                      <div class="logo_revista" style="background: url(<?php bloginfo('template_url'); ?>/assets/img/logo_revista_detalle.svg);"> </div>
-                        <p>Suscríbete y podrás estar al día de todas las tendencias.
-                            <a href="http://www.revistadetalle.cl/" target="_blank"  class="btn btn-default btn_revista hvr-float" role="button">revista detalle</a>
-					             </p>
-                    </div> --> <!-- caption revista -->
-                 </div>
-              </div> <!-- revista detalle -->
-      </div> <!-- row -->
 <?php endwhile; else: ?>
 <?php endif; ?>
 <?php include('footer.php') ?>

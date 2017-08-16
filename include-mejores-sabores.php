@@ -24,7 +24,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 	                <div class="grid_tiendas">
 		                <?php
 			            
-						$tiendas = $db->rawQuery("select * from pak_tiendas where idioma = $idioma and tipo = 110 order by rand() limit 4");
+						$tiendas = $db->rawQuery("select * from pak_tiendas where tipo = 110 order by rand() limit 4");
 						if($tiendas){
 						foreach ($tiendas as $t) {   
                         	$imagen = get_img_tienda($t['punto_interes']);

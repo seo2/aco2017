@@ -251,7 +251,7 @@
 							    if($ord){
 								    $existe = false;
 								    $ord = addslashes( $ord);
-									$participante = $db->rawQuery("select * from pak_tiendas_tags where idioma = $idioma and punto_interes = $punto_interes and tag LIKE '$ord'");
+									$participante = $db->rawQuery("select * from pak_tiendas_tags where punto_interes = $punto_interes and tag LIKE '$ord'");
 									if($participante){
 										foreach ($participante as $p) {
 											$existe = true;
@@ -274,7 +274,7 @@
 							    echo '<p>'.$loc.'</p>';
 							    if($loc){
 								    $existe = false;
-									$participante = $db->rawQuery("select * from pak_tiendas_local where idioma = $idioma and punto_interes = $punto_interes and local = $loc");
+									$participante = $db->rawQuery("select * from pak_tiendas_local where punto_interes = $punto_interes and local = $loc");
 									if($participante){
 										foreach ($participante as $p) {
 											$existe = true;
@@ -302,7 +302,7 @@
 							    $categorias .= $sc.',';
 							    if($sc){
 								    $existe = false;
-									$participante = $db->rawQuery("select * from pak_tiendas_scat where idioma = $idioma and punto_interes = $punto_interes and sub_categoria = $sc");
+									$participante = $db->rawQuery("select * from pak_tiendas_scat where punto_interes = $punto_interes and sub_categoria = $sc");
 									if($participante){
 										foreach ($participante as $p) {
 											$existe = true;
@@ -345,7 +345,7 @@
 							    echo '<div class="col-sm-3"><img src="'.$img.'" class="img-responsive"></div>';
 							    if($img){ 
 								    $existe = false;
-									$participante = $db->rawQuery("select * from pak_tiendas_img where idioma = $idioma and punto_interes = $punto_interes and imagenes LIKE '$img'");
+									$participante = $db->rawQuery("select * from pak_tiendas_img where punto_interes = $punto_interes and imagenes LIKE '$img'");
 									if($participante){
 										foreach ($participante as $p) {
 											$existe = true;

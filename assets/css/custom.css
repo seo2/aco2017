@@ -1909,3 +1909,19 @@ nav #navbar .container.menu_container .col-sm-12 .box_newsletter .form_neswslett
 
 /*----*/
 .logotravellersxs { position: absolute; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); top: 50%; right: -10px; width: 40px; }
+section.top .navbar-header .logo a { display: inline-block; background: url(../img/logo-Arauco-Coronel.svg) no-repeat; }
+
+section.main_content .box .box_slider .item a .caption.tiendas{background-color: rgba(241, 43, 118, 0.3);}
+section.main_content .box .box_slider .item a .caption.entretencion{background-color: rgba(22, 97, 138, 0.3);}
+section.main_content .box .box_slider .item a .caption.foodcourt{background-color: rgba(95, 171, 162, 0.3);}
+section.main_content .box .box_slider .item a .caption.galeria{background-color: rgba(208, 107, 57, 0.3);}
+
+
+@media (max-width: 991px){
+	section.top #menu_mobile .logo a,
+	section.top #nav_mobile .navbar-header .logo a {
+	    background: url(../img/logos_mall/arauco_coronel.svg) no-repeat;
+	}
+}
+
+

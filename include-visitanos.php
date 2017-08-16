@@ -15,11 +15,11 @@ if(ICL_LANGUAGE_CODE=='en'){
 		?>				
         <div class="logos_pak_xs visible-xs visible-sm visible-md">
             <div class="slider_logos_mall owl-carousel owl-theme">
-           <!-- <div class="item">
-                  <a href="" target="_blank">
-                      <img src="<?php bloginfo('template_url'); ?>/assets/img/logos_mall/parque_arauco_xs.svg" alt="" class="center-block">
-                  </a>
-            </div> -->
+	           <div class="item">
+	                <a href="http://www.parquearauco.cl/" target="_blank">
+	                    <img src="<?php bloginfo('template_url'); ?>/assets/img/logos_mall/parque_arauco_xs.svg" alt="Parque Arauco" class="center-block">
+	                </a>
+	            </div>
                 <div class="item">
                     <a href="http://www.araucomaipu.cl/" target="_blank">
                         <img src="<?php bloginfo('template_url'); ?>/assets/img/logos_mall/arauco_maipu.svg" alt="" class="center-block">
@@ -46,11 +46,6 @@ if(ICL_LANGUAGE_CODE=='en'){
                     </a>
                 </div>
                 <div class="item">
-                    <a href="javascript:void(0);" target="_blank">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/img/logos_mall/arauco_coronel.svg" alt="" class="center-block">
-                    </a>
-                </div>
-                <div class="item">
                     <a href="http://araucopremiumoutlet.cl/" target="_blank">
                         <img src="<?php bloginfo('template_url'); ?>/assets/img/logos_mall/arauco_premium_outlet.svg" alt="" class="center-block">
                     </a>
@@ -62,11 +57,12 @@ if(ICL_LANGUAGE_CODE=='en'){
 		?>
 		<div class="logos_pak_lg hidden-xs hidden-sm hidden-md">
           <ul>
-           <!--  <li>
-                  <a href="">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/logos_mall/parque_arauco.svg" class="">
-                  </a>
-                </li> -->
+		  	<li>
+            	<a class="hvr-float" href="http://www.parquearauco.cl/" target="_blank">
+<!--                 	<img src="<?php bloginfo('template_url'); ?>/assets/img/logos_mall/parque_arauco.svg" class=""> -->
+                	<img src="<?php bloginfo('template_url'); ?>/assets/img/logo_xs.svg" class="logo_size">
+              	</a>
+            </li>
             <li>
                 <a class="hvr-float" href="http://www.araucomaipu.cl/" target="_blank">
                   <img src="<?php bloginfo('template_url'); ?>/assets/img/logos_mall/arauco_maipu.svg" class="logo_size">
@@ -90,11 +86,6 @@ if(ICL_LANGUAGE_CODE=='en'){
             <li>
                 <a class="hvr-float" href="http://www.araucochillan.cl/" target="_blank">
                   <img src="<?php bloginfo('template_url'); ?>/assets/img/logos_mall/arauco_chillan.svg" class="logo_size">
-                </a>
-            </li>
-            <li>
-                <a class="hvr-float" href="javascript:void(0);" target="_blank">
-                  <img src="<?php bloginfo('template_url'); ?>/assets/img/logos_mall/arauco_coronel.svg" class="logo_size">
                 </a>
             </li>
             <li>

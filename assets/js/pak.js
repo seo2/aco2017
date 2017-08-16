@@ -109,73 +109,6 @@ $('.slider_destacado_home').owlCarousel({
 
 
 
-$('.slider_dl').owlCarousel({
-    loop:false,
-    margin:10,
-    nav:false,
-    dots: true,
-    autoplay: false,
-    video: true,
-    lazyLoad:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        768:{
-            items:1
-        },
-        1200:{
-            items:1
-        }
-    }
-});
-
-
-$('.slider_tiendas_dl').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    dots: false,
-    autoplay: false,
-    video: false,
-    lazyLoad:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        768:{
-            items:1
-        },
-        1200:{
-            items:1
-        }
-    }
-});
-
-
-$('.slider_single_tiendas_dl').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    dots: false,
-    autoplay: false,
-    video: false,
-    lazyLoad:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        768:{
-            items:1
-        },
-        1200:{
-            items:1
-        }
-    }
-});
-
-
-
 $('.slider_servicios_generales').owlCarousel({
     loop:true,
     margin:10,
@@ -221,26 +154,6 @@ $('.slider_tag').owlCarousel({
     }
 });
 
-$('.slider_travellers').owlCarousel({
-    loop:false,
-    margin:10,
-    nav:false,
-    dots: false,
-    autoplay: false,
-    rewind: true,
-    lazyLoad:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        768:{
-            items:1
-        },
-        1024:{
-            items:1
-        }
-    }
-});
 
 $('.slider_servicios_cliente').owlCarousel({
     loop:false,
@@ -284,28 +197,6 @@ $('.slider_entrentencion').owlCarousel({
     }
 });
 
-
-$('.slider_travellers_tarjeta').owlCarousel({
-    loop:false,
-    margin:10,
-    nav:false,
-    dots: true,
-    autoplay: false,
-    rewind: true,
-    lazyLoad:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        768:{
-            items:1
-        },
-        1024:{
-            items:1
-        }
-    }
-});
-// slider calugas secciones
 
 $('.box_slider').owlCarousel({
   
@@ -352,64 +243,28 @@ $('.box_slider').owlCarousel({
     });
 
 
-
-
-        // function Time(){
-        //         var offset = -70; 
-        //          //  Handler for .ready() called.
-        //          $('html, body').animate({
-        //             scrollTop: $(".search_home").offset().top + offset
-        //         }, 1000);
-        // }
-        //  setTimeout(Time, 1500);
-
-
-        // The function actually applying the offset al ancla
-
-            // function offsetAnchor() {
-            //   if (location.hash.length !== 0) {
-            //     window.scrollTo(window.scrollX, window.scrollY - 223);
-            //   }
-            // }
-
-            // Captures click events of all <a> elements with href starting with #
-          //  $(document).on('click', 'a[href^="#"]', function(event) {
-              // Click events are captured before hashchanges. Timeout
-              // causes offsetAnchor to be called after the page jump.
-
-            //   window.setTimeout(function() {
-            //     offsetAnchor();
-            //   }, 0);
-            // });
-
-            // Set the offset when entering page with hash present in the url
-          //  window.setTimeout(offsetAnchor, 0);
-
         // tiendas
-        var id_tienda;
-
+        
        $('body').on('click', '.overlay_img', function(e) {
 	   		tipo = $(this).data('tipo');
 	        id_tienda = $(this).data('id');
-	   		if(tipo>0){
-	   		  if(tipo=='0'){
+	   		if(tipo>1){
+	   		  if(tipo=='1'){
 			      pagina = '/tiendas?tiendaID=';
-		      }else if(tipo=='110'){
-			      pagina = '/boulevard-tiendas?tiendaID=';
-			  }else if(tipo=='119'){
-			      pagina = '/distrito-de-lujo-tienda?tiendaID=';
-			  }else if(tipo=='131'){
-			      pagina = '/piso-diseno?tiendaID=';
+		      }else if(tipo=='3'){
+			      pagina = '/food-court-tiendas?tiendaID=';
+			  }else if(tipo=='2'){
+			      pagina = '/bazar-central?tiendaID=';
 			  }
 		      window.location.href = urlpak+pagina+id_tienda;		   		
 	   		}else{
-		   		logo 	= $(this).data('logo');
-		   		desc 	= $(this).data('desc');
-		   		img  	= $(this).data('img');
-		   		nombre  = $(this).data('nombre');
-		   		fono 	= $(this).data('fono');
-		   		piso 	= $(this).data('piso');
-		   		url  	= $(this).data('url');
+		   		logo 		= $(this).data('logo');
+		   		desc 		= $(this).data('desc');
+		   		img  		= $(this).data('img');
+		   		nombre  	= $(this).data('nombre');
+		   		fono 		= $(this).data('fono');
+		   		piso 		= $(this).data('piso');
+		   		url  		= $(this).data('url');
 		   		pindcto 	= $(this).data('pindcto');
 		   		pinctodesc  = $(this).data('pinctodesc');   	
 		   		
@@ -438,20 +293,7 @@ $('.box_slider').owlCarousel({
 	            $(".lang, .rrss, .search").hide();
 	            $("#caja_datos_tienda").css("display", "block");
 	            $(".close_tienda").css('display','block').show().data('id',id_tienda);
-		
-		   		
-/*
-		   		if( $(this).hasClass('tieneDescuento')){
-			   		$('.pinDescuento').removeClass('hide');
-			   		$('#pinDescuento').html(pindcto);
-			   		$('#piiDescripcionDescuento').html(pinctodesc);
-		   		}else{
-			   		$('.pinDescuento').addClass('hide');
-			   		$('#pinDescuento').html('');
-			   		$('#piiDescripcionDescuento').html('');
-		   		}
-*/
-		   		
+			
 	            $('body').toggleClass('menu_open');
 	            $('body,html').animate({
 	                scrollTop : 0                   

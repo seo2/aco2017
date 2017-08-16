@@ -122,7 +122,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 <?php 
 	$postperpage = 8;
 	$rowcount = 0;
-	$tiendas = $db->rawQuery("select * from pak_tiendas where idioma = $idioma and tipo = 119");    
+	$tiendas = $db->rawQuery("select * from pak_tiendas where tipo = 119");    
 	if($tiendas){
 		foreach ($tiendas as $t) {   
 			$rowcount++;
