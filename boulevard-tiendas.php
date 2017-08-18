@@ -14,7 +14,7 @@ Template name: Boulevard Tiendas
           <div class="row">
               <section class="tiendas">
               <div id="tiendas" class="anchor_seccion"></div>
-                  <h4 class="divider">Food Court</h4>
+                  <h4 class="divider">Patio de Comidas</h4>
                    <a href="food-court.php" class="back">< <?php echo $back; ?></a>
                       <div class="grid_tiendas center-block">
                           <div class="container">
@@ -57,7 +57,7 @@ Template name: Boulevard Tiendas
                                 		if(is_url_exist($logo)){
 	                                		$logo = $logo;
 									  	}else{
-                                        	$logo 	= "/assets/img/logo_381.jpg";
+                                        	$logo 	= "/assets/img/logo_381.jpg?v=2";
 										  	$logo	= get_template_directory_uri().$logo;
 									  	}
 

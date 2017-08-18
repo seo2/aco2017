@@ -87,7 +87,9 @@ if(ICL_LANGUAGE_CODE=='en'){
 													<div class="img_lg" style="background: url(<?php echo get('banner_grande_imagen'); ?>);"> </div>
 													<div class="caption texto_blanco">
 														<div class="">
+															<?php if(get('banner_grande_link')){ ?>
 															<a class="btn btn-default btn_blanco" href="<?php echo get('banner_grande_link'); ?>" role="button"><?php echo $btn1; ?></a>
+															<?php } ?>
 														</div>
 													</div> 
                         						</div><!-- image dynamic -->

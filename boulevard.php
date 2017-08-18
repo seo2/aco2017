@@ -36,7 +36,7 @@ if(ICL_LANGUAGE_CODE=='en'){
         <div class="container">
           <div class="row">
             <div class="col-sm-12 col-md-10">
-               <h4 class="divider">Food Court</h4>
+               <h4 class="divider">Patio de Comidas</h4>
             </div>
             <div class="col-sm-12 col-md-2">
               <a href="<?php bloginfo('url'); ?>" class="back">< <?php echo $back; ?></a>
@@ -89,7 +89,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 													<div class="img_lg" style="background: url(<?php echo get('caluga_cartelera_imagen'); ?>);"> </div>
 													<div class="caption  <?php if(get('caluga_cartelera_texto_blanco')){ ?>texto_blanco<?php } ?>">
 														<h3><?php echo $tit2; ?></h3>
-														<h4 class="divider">Food Court</h4>
+														<h4 class="divider">Patio de Comidas</h4>
 														<p><?php echo get('caluga_cartelera_fecha'); ?></p> 
 														<div class="text-center">
                               <a class="btn btn-default btn_blanco" href="<?php bloginfo('url'); ?>?p=<?php echo get('caluga_cartelera_enlace'); ?>#cartelera" role="button"><?php echo $btn1; ?></a>
@@ -154,7 +154,7 @@ if(ICL_LANGUAGE_CODE=='en'){
                                 		if(is_url_exist($logo)){
 	                                		$logo = $logo;
 									  	}else{
-                                        	$logo 	= "/assets/img/logo_381.jpg";
+                                        	$logo 	= "/assets/img/logo_381.jpg?v=2";
 										  	$logo	= get_template_directory_uri().$logo;
 									  	}
 

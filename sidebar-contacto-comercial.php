@@ -86,7 +86,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 	                            <?php if($e==1){ ?>
                                    <div class="caption foodcourt">
                                       <p>NUESTRA VARIEDAD </p>
-                                       <h3>FOOD COURT </h3>
+                                       <h3>Patio de Comidas </h3>
                                        <div class="divider"> </div>
                                    </div>
                                 <?php } ?>

@@ -67,7 +67,6 @@ if(ICL_LANGUAGE_CODE=='en'){
 							<option value="Sugerencia">Sugerencia</option>
 							<option value="Felicitaciones">Felicitaciones</option>
 							<option value="Reclamo">Reclamo</option>
-							<option value="Travellers - Servicios al Turista">Travellers - Servicios al Turista</option>
 						</select>
 					</div>
                 </div>
@@ -76,13 +75,13 @@ if(ICL_LANGUAGE_CODE=='en'){
                         <label for="exampleInputName2"><?php echo $form6; ?> <span class="texto_rojo">*</span></label>
                         <select class="selectpicker show-menu-arrow" name="tipo" required> 
                             <option selected="selected" value="" > seleccione</option>
-                            <option value="Servicio al Cliente">Servicio al Cliente</option>
-                            <option value="Estacionamientos" >Estacionamientos</option>
-                            <option value="Actividades del mall" >Actividades del mall</option>
-                            <option value="Arriendo espacios y locales" >Arriendo espacios y locales</option>
-                            <option value="Arriendo Plazas, Activaciones y Medios" >Arriendo Plazas, Activaciones y Medios</option>
-                            <option value="Arriendo Módulos" >Arriendo Módulos</option>
-                            <option value="Sitio web y redes sociales" >Sitio web y redes sociales</option>
+                            <option value="1">Servicio al Cliente</option>
+                            <option value="2" >Estacionamientos</option>
+                            <option value="3" >Actividades del mall</option>
+                            <option value="4" >Arriendo espacios y locales</option>
+                            <option value="5" >Arriendo Plazas, Activaciones y Medios</option>
+                            <option value="6" >Arriendo Módulos</option>
+                            <option value="7" >Sitio web y redes sociales</option>
                         </select>
                     </div>
                 </div>

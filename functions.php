@@ -332,6 +332,7 @@ function quitatodo($string){
 	$colA = str_replace('%', 'porc', $colA);
 	$colA = str_replace('&', 'porc', $colA);
 	$colA = str_replace('generico', '', $colA);
+	$colA = str_replace("'", '', $colA);
 	$colA = strtolower($colA);
 	return $colA;
 }

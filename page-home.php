@@ -84,7 +84,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 	                            <?php if($e==1){ ?>
                                    <div class="caption foodcourt">
                                       <p>NUESTRA VARIEDAD </p>
-                                       <h3>FOOD COURT </h3>
+                                       <h3>Patio de Comidas </h3>
                                        <div class="divider"> </div>
                                    </div>
                                 <?php } ?>
@@ -106,7 +106,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 								$e++; 
 						?>    	
                               <div class="item">
-                                  <a href="<?php bloginfo('url'); ?>/novedades-galeria/#galerias">                                   
+                                  <a href="<?php bloginfo('url'); ?>/bazar-central/#tiendas">                                   
 	                            <?php if($e==1){ ?>
                                    <div class="caption galeria">
                                       <p>VARIEDAD DE PRODUCTOS </p>

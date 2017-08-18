@@ -39,7 +39,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 	$btn1 = "Veja todas as nossas lojas";
 	$btn2 = "Veja mais";
 }else{ 	
-    $menu3 = "Food Court";
+    $menu3 = "Patio de Comidas";
     $menu4 = "Bazar Central";
     $menu5 = "entretención";
     $menu6 = "novedades";

@@ -25,25 +25,23 @@ if($tipo==1){
 	$to = "sarias@parauco.com ";
 }elseif($tipo==2){
 	$servicio = "Estacionamientos";	
-	$to = "kcastillo@parauco.com";
+	$to = "natalie.ortiz@parauco.com";
 }elseif($tipo==3){
 	$servicio = "Actividades del mall";	
-	$to = "cgarcia@parauco.com";
+	$to = "natalie.ortiz@parauco.com";
 }elseif($tipo==4){
 	$servicio = "Arriendo espacios y locales";	
-	$to = "clira@parauco.com";
+	$to = "claudio.gonzalez@parauco.com";
 }elseif($tipo==5){
 	$servicio = "Arriendo Plazas, Activaciones y Medios";	
 	$to = "tmendez@parauco.com";
 }elseif($tipo==6){
 	$servicio = "Arriendo Módulos";	
-	$to = "jaldunate@parauco.com";
+	$to = "claudio.gonzalez@parauco.com";
 }elseif($tipo==7){
 	$servicio = "Sitio web y redes sociales";	
-	$to = "mbesnier@parauco.com";
+	$to = "cgarcia@parauco.com";
 }
-
-
 	
 //	$to 	 = 'seodos@gmail.com';
 	
@@ -59,8 +57,8 @@ if($tipo==1){
 	$message .= "</div>";
 	$message .= "</body></html>";
 	
-	$subject = 'Mensaje desde ParqueArauco.cl';
-	$headers = "From: " . "<no-reply@parquearauco.cl> Contacto Parque Arauco" . "\r\n";
+	$subject = 'Mensaje desde araucocoronel.cl';
+	$headers = "From: " . "<no-reply@araucocoronel.cl> Contacto Arauco Coronel" . "\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 	

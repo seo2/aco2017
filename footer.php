@@ -11,7 +11,7 @@ if(ICL_LANGUAGE_CODE=='en'){
 }else{ 
 	$tit1 = "servicio al cliente";
 	$tit2 = "TODO LO QUE NECESITAS SABER";
-	$tit3 = "Dónde estamos, tarifas de estacionamiento, contacto y preguntas frecuentes.";
+	$tit3 = "Dónde estamos, estacionamiento, contacto y preguntas frecuentes.";
 } ?> 
     		<div class="row">
                 <div class="col-sm-12">
@@ -104,7 +104,8 @@ if(ICL_LANGUAGE_CODE=='en'){
 <!--                     <p>DOMINGO E FERIADOS DAS 11:00H ATÉ AS 21:00H.</p> -->
 					<?php }else{  ?>
                     <h2>horarios</h2>
-                    <p>Lunes a domingo de 10:30 a 21:00 hrs.</p>
+                    <p>Lunes a domingo<br>
+	                    Apertura: 10:30hrs. Cierre 21:00 hrs.</p>
 <!--                     <p>domingo y festivos de 11:00 a 21:00 hrs. </p> -->
 					<?php } ?> 	                  
                   </div>
